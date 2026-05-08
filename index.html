@@ -164,7 +164,7 @@ h1 {
 
 <div class="container">
 
-<h1>MI MEJOR PRONÓSTICO GRATIS PARA HOY ⬇️</h1>
+<h1>MI MEJOR PRONÓSTICO GRATIS PARA HOY 🤟🏻</h1>
 
 <img src="./BrotherPicks.jpeg" alt="Brothers Picks" class="profile-img">
 
@@ -191,7 +191,7 @@ h1 {
 <!-- BOTON -->
 <a href="https://t.me/+i9nS2QSLn-UwMTNh" target="_blank" class="main-btn">
     ¡ÚNETE GRATIS A MI CANAL!
-    <span class="arrow">→</span>
+    <span class="arrow"></span>
 </a>
 
 <p class="subtext">💰 Apuestas profesionales con INFORMACIÓN</p>
@@ -216,10 +216,16 @@ h1 {
 
 <!-- SCRIPT CONTADOR -->
 <script>
-let time = 14 * 60 + 57;
+
+let initialTime = 5 * 60;
+let time = initialTime;
 
 setInterval(() => {
-    if (time > 0) time--;
+    if (time > 0) {
+        time--;
+    } else {
+        time = initialTime; // 🔥 reinicia solo
+    }
 
     let d = Math.floor(time / 86400);
     let h = Math.floor((time % 86400) / 3600);
