@@ -4,137 +4,214 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brothers Picks - Acceso VIP</title>
+    <!-- Usamos Google Fonts para una tipografía similar al diseño -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos modernos y atractivos */
         body {
             margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
+            padding: 20px;
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            min-height: 100vh;
             text-align: center;
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-            max-width: 500px;
-            width: 90%;
+            max-width: 800px;
+            width: 100%;
         }
 
         h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #FFD700; /* Color dorado para llamar la atención */
-        }
-
-        p.subtitle {
-            font-size: 18px;
+            font-family: 'Anton', sans-serif;
+            font-size: 38px;
+            letter-spacing: 1px;
             margin-bottom: 30px;
+            text-transform: uppercase;
         }
 
-        /* Estilos del Temporizador */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
         .countdown {
             display: flex;
             justify-content: center;
             gap: 15px;
             margin-bottom: 30px;
+            flex-wrap: wrap;
         }
 
         .time-box {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 15px;
-            border-radius: 10px;
-            min-width: 60px;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            min-width: 75px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
         .time-box span {
-            display: block;
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 38px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 5px;
         }
 
         .time-box small {
-            font-size: 12px;
-            text-transform: uppercase;
-        }
-
-        /* Estilos del Botón Principal */
-        .telegram-btn {
-            display: inline-block;
-            background-color: #0088cc; /* Color oficial de Telegram */
-            color: white;
-            text-decoration: none;
-            padding: 18px 35px;
-            font-size: 20px;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);
-        }
-
-        .telegram-btn:hover {
-            background-color: #0099e6;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 136, 204, 0.6);
-        }
-
-        /* Enlaces de ayuda */
-        .help-links {
-            margin-top: 30px;
             font-size: 14px;
-            color: #ccc;
+            font-weight: 700;
+            text-transform: capitalize;
         }
 
-        .help-links a {
-            color: #FFD700;
+        .main-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0b0914;
+            color: #ffffff;
             text-decoration: none;
+            padding: 18px 45px;
+            font-size: 20px;
+            font-weight: 700;
+            border-radius: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .main-btn:hover {
+            transform: scale(1.05);
+            background-color: #1a1528;
+        }
+
+        .main-btn svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            fill: currentColor;
+        }
+
+        .subtext {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .small-text {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+
+        .store-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .store-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000000;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 25px;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .store-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .store-btn svg {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            fill: currentColor;
+        }
+        
+        @media (max-width: 480px) {
+            h1 { font-size: 26px; }
+            .time-box { min-width: 60px; padding: 10px 15px; }
+            .time-box span { font-size: 28px; }
+            .store-buttons { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>¡ACCESO VIP A BROTHERS PICKS! 🚀</h1>
-        <p class="subtitle">Únete ahora antes de que cerremos el grupo.</p>
+        <h1>MI MEJOR PRONÓSTICO GRATIS PARA HOY AQUÍ ⬇️</h1>
+        
+        <!-- Aquí va la foto. Usa un enlace temporal hasta que me pases la imagen real -->
+        <img src="https://via.placeholder.com/150x150/EEEEEE/999999?text=FOTO" alt="Perfil" class="profile-img" id="profile-picture">
 
-        <!-- Temporizador Visual -->
         <div class="countdown">
             <div class="time-box">
-                <span id="hours">02</span>
+                <span id="days">00</span>
+                <small>Días</small>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
                 <small>Horas</small>
             </div>
             <div class="time-box">
-                <span id="minutes">15</span>
+                <span id="minutes">14</span>
                 <small>Minutos</small>
             </div>
             <div class="time-box">
-                <span id="seconds">45</span>
-                <small>Segundos</small>
+                <span id="seconds">57</span>
+                <small>Segundo</small>
             </div>
         </div>
 
-        <!-- REEMPLAZA EL ENLACE DE ABAJO POR TU ENLACE DE TELEGRAM -->
-        <a href="https://t.me/+i9nS2QSLn-UwMTNh" class="telegram-btn" target="_blank">
-            👉 ¡ÚNETE GRATIS AL CANAL!
+        <!-- Enlace del grupo de Telegram actualizado -->
+        <a href="https://t.me/+i9nS2QSLn-UwMTNh" class="main-btn" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.123-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            ¡ÚNETE GRATIS A MI CANAL!
         </a>
 
-        <div class="help-links">
-            <p>¿No tienes la app? Descárgala para <a href="https://play.google.com/store/apps/details?id=org.telegram.messenger" target="_blank">Android</a> o <a href="https://apps.apple.com/app/telegram-messenger/id686449807" target="_blank">iOS</a>.</p>
+        <p class="subtext">💰 ¡Apuestas profesionales con INFORMACIÓN! Pronósticos exclusivos GRATIS. 💥</p>
+        <p class="subtext" style="margin-bottom: 25px;">¡Únete a mi grupo gratuito ahora! ⬇️</p>
+
+        <p class="small-text">¿No tienes Telegram? Descárgalo aquí</p>
+
+        <div class="store-buttons">
+            <a href="https://play.google.com/store/apps/details?id=org.telegram.messenger" class="store-btn" target="_blank">
+                <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5.38 0 .74.15 1.01.42l11.45 11.45L3 20.5zM17.47 13.38L21 11.33c.6-.33.6-.86 0-1.2l-3.53-2.05-3.32 3.32 3.32 3.31V13.38z"/></svg>
+                Telegram Play Store
+            </a>
+            <a href="https://apps.apple.com/app/telegram-messenger/id686449807" class="store-btn" target="_blank">
+                <!-- Simple iOS icon placeholder using text for simplicity -->
+                Apple Store
+            </a>
         </div>
     </div>
 
-    <!-- Script simple para que el reloj avance -->
     <script>
-        let time = 2 * 3600 + 15 * 60 + 45; // 2 horas, 15 min, 45 seg
+        // Inicia en 14 minutos 57 segundos tal como en tu imagen
+        let time = 14 * 60 + 57; 
+        const dEl = document.getElementById('days');
         const hEl = document.getElementById('hours');
         const mEl = document.getElementById('minutes');
         const sEl = document.getElementById('seconds');
@@ -143,10 +220,12 @@
             if(time <= 0) time = 0;
             else time--;
             
-            const h = Math.floor(time / 3600);
+            const d = Math.floor(time / 86400);
+            const h = Math.floor((time % 86400) / 3600);
             const m = Math.floor((time % 3600) / 60);
             const s = time % 60;
 
+            dEl.textContent = d.toString().padStart(2, '0');
             hEl.textContent = h.toString().padStart(2, '0');
             mEl.textContent = m.toString().padStart(2, '0');
             sEl.textContent = s.toString().padStart(2, '0');
