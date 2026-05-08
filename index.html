@@ -80,21 +80,22 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background-color: #0b0914;
-            color: #ffffff;
+            background-color: #39ff14; /* Verde neón del logo */
+            color: #000000; /* Texto negro para contraste */
             text-decoration: none;
             padding: 18px 45px;
             font-size: 20px;
             font-weight: 700;
             border-radius: 30px;
             margin-bottom: 30px;
-            transition: transform 0.2s, background-color 0.2s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(57, 255, 20, 0.4);
         }
 
         .main-btn:hover {
             transform: scale(1.05);
-            background-color: #1a1528;
+            background-color: #32e612;
+            box-shadow: 0 6px 20px rgba(57, 255, 20, 0.6);
         }
 
         .main-btn svg {
@@ -163,8 +164,8 @@
     <div class="container">
         <h1>MI MEJOR PRONÓSTICO GRATIS PARA HOY AQUÍ ⬇️</h1>
         
-        <!-- Aquí va la foto. Usa un enlace temporal hasta que me pases la imagen real -->
-        <img src="https://via.placeholder.com/150x150/EEEEEE/999999?text=FOTO" alt="Perfil" class="profile-img" id="profile-picture">
+        <!-- Logo oficial -->
+        <img src="./logo.png" alt="Brothers Picks" class="profile-img" id="profile-picture">
 
         <div class="countdown">
             <div class="time-box">
@@ -202,8 +203,8 @@
                 Telegram Play Store
             </a>
             <a href="https://apps.apple.com/app/telegram-messenger/id686449807" class="store-btn" target="_blank">
-                <!-- Simple iOS icon placeholder using text for simplicity -->
-                Apple Store
+                <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91 1.65.17 2.76.84 3.49 2.01-3.06 1.83-2.58 5.7.53 6.94-.75 1.54-1.55 3.12-2.94 3.71zM15.42 4.2c-.67 1.05-1.92 1.76-3.05 1.68.14-1.27.81-2.5 1.64-3.26.79-.75 2.02-1.35 3.09-1.27-.14 1.23-.74 2.23-1.68 2.85z"/></svg>
+                Telegram Apple Store
             </a>
         </div>
     </div>
