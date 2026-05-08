@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Únete a nuestro Canal VIP</title>
+    <style>
+        /* Estilos modernos y atractivos */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #FFD700; /* Color dorado para llamar la atención */
+        }
+
+        p.subtitle {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* Estilos del Temporizador */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .time-box {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 15px;
+            border-radius: 10px;
+            min-width: 60px;
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .time-box small {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        /* Estilos del Botón Principal */
+        .telegram-btn {
+            display: inline-block;
+            background-color: #0088cc; /* Color oficial de Telegram */
+            color: white;
+            text-decoration: none;
+            padding: 18px 35px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);
+        }
+
+        .telegram-btn:hover {
+            background-color: #0099e6;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 136, 204, 0.6);
+        }
+
+        /* Enlaces de ayuda */
+        .help-links {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .help-links a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>¡ACCESO VIP GRATUITO POR TIEMPO LIMITADO! 🚀</h1>
+        <p class="subtitle">Únete ahora antes de que cerremos el grupo.</p>
+
+        <!-- Temporizador Visual -->
+        <div class="countdown">
+            <div class="time-box">
+                <span id="hours">02</span>
+                <small>Horas</small>
+            </div>
+            <div class="time-box">
+                <span id="minutes">15</span>
+                <small>Minutos</small>
+            </div>
+            <div class="time-box">
+                <span id="seconds">45</span>
+                <small>Segundos</small>
+            </div>
+        </div>
+
+        <!-- REEMPLAZA EL ENLACE DE ABAJO POR TU ENLACE DE TELEGRAM -->
+        <a href="https://t.me/TU_ENLACE_DE_INVITACION_AQUI" class="telegram-btn" target="_blank">
+            👉 ¡ÚNETE GRATIS AL CANAL!
+        </a>
+
+        <div class="help-links">
+            <p>¿No tienes la app? Descárgala para <a href="https://play.google.com/store/apps/details?id=org.telegram.messenger" target="_blank">Android</a> o <a href="https://apps.apple.com/app/telegram-messenger/id686449807" target="_blank">iOS</a>.</p>
+        </div>
+    </div>
+
+    <!-- Script simple para que el reloj avance -->
+    <script>
+        let time = 2 * 3600 + 15 * 60 + 45; // 2 horas, 15 min, 45 seg
+        const hEl = document.getElementById('hours');
+        const mEl = document.getElementById('minutes');
+        const sEl = document.getElementById('seconds');
+
+        setInterval(() => {
+            if(time <= 0) time = 0;
+            else time--;
+            
+            const h = Math.floor(time / 3600);
+            const m = Math.floor((time % 3600) / 60);
+            const s = time % 60;
+
+            hEl.textContent = h.toString().padStart(2, '0');
+            mEl.textContent = m.toString().padStart(2, '0');
+            sEl.textContent = s.toString().padStart(2, '0');
+        }, 1000);
+    </script>
+</body>
+</html>
