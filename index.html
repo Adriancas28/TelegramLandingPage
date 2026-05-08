@@ -1,236 +1,201 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Brothers Picks - Acceso VIP</title>
-    <!-- Usamos Google Fonts para una tipografía similar al diseño -->
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
     <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: 'Roboto', sans-serif;
-            background-color: #ffffff;
-            color: #000000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
+      body {
+        background: #fff;
+        font-family: "Roboto", sans-serif;
+        text-align: center;
+        padding: 20px;
+      }
 
-        .container {
-            max-width: 800px;
-            width: 100%;
-        }
+      h1 {
+        font-family: "Anton", sans-serif;
+        font-size: 38px;
+        text-transform: uppercase;
+      }
 
-        h1 {
-            font-family: 'Anton', sans-serif;
-            font-size: 38px;
-            letter-spacing: 1px;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
+      /* Imagen */
+      .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 25px 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+      /* COUNTDOWN */
+      .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 25px;
+      }
 
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
+      .time-box {
+        background: black;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        min-width: 70px;
+      }
 
-        .time-box {
-            background-color: #000000;
-            color: #ffffff;
-            padding: 15px 20px;
-            border-radius: 8px;
-            min-width: 75px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-        }
+      .time-box span {
+        font-size: 32px;
+        font-weight: bold;
+      }
 
-        .time-box span {
-            font-size: 38px;
-            font-family: 'Roboto', sans-serif;
-            font-weight: 700;
-            line-height: 1;
-            margin-bottom: 5px;
-        }
+      /* BOTON PRINCIPAL */
+      .main-btn {
+        background: #39ff14;
+        color: black;
+        padding: 18px 40px;
+        font-weight: 700;
+        border-radius: 30px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        font-size: 20px;
+        box-shadow: 0 5px 20px rgba(57, 255, 20, 0.5);
+        transition: 0.3s;
+      }
 
-        .time-box small {
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: capitalize;
-        }
+      .main-btn:hover {
+        transform: scale(1.05);
+        background: #2de00f;
+      }
 
-        .main-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #39ff14; /* Verde neón del logo */
-            color: #000000; /* Texto negro para contraste */
-            text-decoration: none;
-            padding: 18px 45px;
-            font-size: 20px;
-            font-weight: 700;
-            border-radius: 30px;
-            margin-bottom: 30px;
-            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(57, 255, 20, 0.4);
-        }
+      /* Flecha */
+      .arrow {
+        font-size: 22px;
+        transition: transform 0.3s;
+      }
 
-        .main-btn:hover {
-            transform: scale(1.05);
-            background-color: #32e612;
-            box-shadow: 0 6px 20px rgba(57, 255, 20, 0.6);
-        }
+      .main-btn:hover .arrow {
+        transform: translateX(5px);
+      }
 
-        .main-btn svg {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-            fill: currentColor;
-        }
+      /* TEXTOS */
+      .subtext {
+        font-weight: bold;
+      }
 
-        .subtext {
-            font-size: 17px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #000;
-        }
+      .small-text {
+        color: #666;
+        margin-top: 20px;
+      }
 
-        .small-text {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 20px;
-            margin-top: 30px;
-        }
+      /* BOTONES STORE */
+      .store-btn {
+        background: black;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: 0.3s;
+      }
 
-        .store-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+      .store-btn:hover {
+        transform: scale(1.05);
+      }
 
-        .store-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #000000;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 12px 25px;
-            font-size: 14px;
-            font-weight: 700;
-            border-radius: 8px;
-            transition: transform 0.2s;
-        }
+      .store-buttons {
+        margin-top: 15px;
+      }
 
-        .store-btn:hover {
-            transform: scale(1.05);
-        }
+      /* ICONOS SIN AZUL */
+      svg {
+        fill: black;
+      }
 
-        .store-btn svg {
-            width: 16px;
-            height: 16px;
-            margin-right: 8px;
-            fill: currentColor;
-        }
-        
-        @media (max-width: 480px) {
-            h1 { font-size: 26px; }
-            .time-box { min-width: 60px; padding: 10px 15px; }
-            .time-box span { font-size: 28px; }
-            .store-buttons { flex-direction: column; }
-        }
+      .store-btn svg {
+        fill: white;
+      }
     </style>
-</head>
-<body>
+  </head>
 
+  <body>
     <div class="container">
-        <h1>MI MEJOR PRONÓSTICO GRATIS PARA HOY AQUÍ ⬇️</h1>
-        
-        <!-- Logo oficial -->
-        <img src="./BrotherPicks.jpeg" alt="Brothers Picks" class="profile-img" id="profile-picture">
+      <h1>MI MEJOR PRONÓSTICO GRATIS PARA HOY ⬇️</h1>
 
-        <div class="countdown">
-            <div class="time-box">
-                <span id="days">00</span>
-                <small>Días</small>
-            </div>
-            <div class="time-box">
-                <span id="hours">00</span>
-                <small>Horas</small>
-            </div>
-            <div class="time-box">
-                <span id="minutes">14</span>
-                <small>Minutos</small>
-            </div>
-            <div class="time-box">
-                <span id="seconds">57</span>
-                <small>Segundo</small>
-            </div>
+      <img src="./BrotherPicks.jpeg" class="profile-img" />
+
+      <div class="countdown">
+        <div class="time-box"><span id="days">00</span><small>Días</small></div>
+        <div class="time-box">
+          <span id="hours">00</span><small>Horas</small>
         </div>
+        <div class="time-box">
+          <span id="minutes">15</span><small>Min</small>
+        </div>
+        <div class="time-box">
+          <span id="seconds">00</span><small>Seg</small>
+        </div>
+      </div>
 
-        <!-- Enlace del grupo de Telegram actualizado -->
-        <a href="https://t.me/+i9nS2QSLn-UwMTNh" class="main-btn" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.123-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-            ¡ÚNETE GRATIS A MI CANAL!
+      <a href="https://t.me/+i9nS2QSLn-UwMTNh" target="_blank" class="main-btn">
+        ¡ÚNETE GRATIS A MI CANAL!
+        <span class="arrow">→</span>
+      </a>
+
+      <p class="subtext">💰 Apuestas profesionales con INFORMACIÓN</p>
+      <p class="subtext">🔥 Pronósticos exclusivos GRATIS</p>
+
+      <p class="small-text">¿No tienes Telegram?</p>
+
+      <div class="store-buttons d-flex justify-content-center gap-3 flex-wrap">
+        <a
+          href="https://play.google.com/store/apps/details?id=org.telegram.messenger"
+          class="store-btn"
+        >
+          ▶ Android
         </a>
 
-        <p class="subtext">💰 ¡Apuestas profesionales con INFORMACIÓN! Pronósticos exclusivos GRATIS. 💥</p>
-        <p class="subtext" style="margin-bottom: 25px;">¡Únete a mi grupo gratuito ahora! ⬇️</p>
-
-        <p class="small-text">¿No tienes Telegram? Descárgalo aquí</p>
-
-        <div class="store-buttons">
-            <a href="https://play.google.com/store/apps/details?id=org.telegram.messenger" class="store-btn" target="_blank">
-                <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5.38 0 .74.15 1.01.42l11.45 11.45L3 20.5zM17.47 13.38L21 11.33c.6-.33.6-.86 0-1.2l-3.53-2.05-3.32 3.32 3.32 3.31V13.38z"/></svg>
-                Telegram Play Store
-            </a>
-            <a href="https://apps.apple.com/app/telegram-messenger/id686449807" class="store-btn" target="_blank">
-                <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91 1.65.17 2.76.84 3.49 2.01-3.06 1.83-2.58 5.7.53 6.94-.75 1.54-1.55 3.12-2.94 3.71zM15.42 4.2c-.67 1.05-1.92 1.76-3.05 1.68.14-1.27.81-2.5 1.64-3.26.79-.75 2.02-1.35 3.09-1.27-.14 1.23-.74 2.23-1.68 2.85z"/></svg>
-                Telegram Apple Store
-            </a>
-        </div>
+        <a
+          href="https://apps.apple.com/app/telegram-messenger/id686449807"
+          class="store-btn"
+        >
+          🍎 iPhone
+        </a>
+      </div>
     </div>
 
     <script>
-        // Inicia en 14 minutos 57 segundos tal como en tu imagen
-        let time = 14 * 60 + 57; 
-        const dEl = document.getElementById('days');
-        const hEl = document.getElementById('hours');
-        const mEl = document.getElementById('minutes');
-        const sEl = document.getElementById('seconds');
+      let time = 14 * 60 + 57;
 
-        setInterval(() => {
-            if(time <= 0) time = 0;
-            else time--;
-            
-            const d = Math.floor(time / 86400);
-            const h = Math.floor((time % 86400) / 3600);
-            const m = Math.floor((time % 3600) / 60);
-            const s = time % 60;
+      setInterval(() => {
+        if (time > 0) time--;
 
-            dEl.textContent = d.toString().padStart(2, '0');
-            hEl.textContent = h.toString().padStart(2, '0');
-            mEl.textContent = m.toString().padStart(2, '0');
-            sEl.textContent = s.toString().padStart(2, '0');
-        }, 1000);
+        let m = Math.floor(time / 60);
+        let s = time % 60;
+
+        document.getElementById("minutes").textContent = m
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("seconds").textContent = s
+          .toString()
+          .padStart(2, "0");
+      }, 1000);
     </script>
-</body>
+  </body>
 </html>
